@@ -1,25 +1,21 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import MetaTags from 'react-meta-tags';
+import { BrowserRouter as Router } from "react-router-dom";
+
+// IMPORT : Material Ui @Color
+import blue from '@material-ui/core/colors/blue';
+
+import Main from './pages';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <MetaTags>
+        <meta name="theme-color" content={blue[700]} />
+      </MetaTags>
+
+      <Main />
+    </Router>
   );
 }
 
